@@ -430,43 +430,57 @@ footer{background:#000;padding:3rem;border-top:1px solid var(--gray2);text-align
 </section>
 
 <!-- PEDIDO -->
+
 <section id="pedido">
   <p class="section-eyebrow reveal">Atendimento</p>
   <h2 class="section-title reveal">Faça seu Pedido</h2>
   <p class="form-subtitle reveal">Atendimento via WhatsApp e retirada nas unidades.</p>
-  <div class="form-inner">
+
+  <form action="https://api.web3forms.com/submit" method="POST" class="form-inner">
+    
+    <input type="hidden" name="access_key" value="SEU_ACCESS_KEY_CORRETO">
+
     <div class="form-row">
       <div class="form-group reveal">
         <label>Nome Completo</label>
-        <input type="text" placeholder="Seu nome">
+        <input type="text" name="name" placeholder="Seu nome" required>
       </div>
+
       <div class="form-group reveal reveal-delay-1">
         <label>WhatsApp</label>
-        <input type="tel" placeholder="(00) 00000-0000">
+        <input type="tel" name="phone" placeholder="(00) 00000-0000" required>
       </div>
     </div>
+
     <div class="form-group reveal">
       <label>Cidade</label>
-      <select style="background:transparent;color:#aaa;border:none;border-bottom:1px solid #2a2a2a;width:100%;padding:0.75rem 0;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;-webkit-appearance:none;cursor:pointer">
-        <option value="" style="background:#111">Selecione sua cidade</option>
-        <option style="background:#111">São Paulo</option>
-        <option style="background:#111">Teresina</option>
-        <option style="background:#111">São Luís</option>
+      <select name="city" required style="background:transparent;color:#aaa;border:none;border-bottom:1px solid #2a2a2a;width:100%;padding:0.75rem 0;">
+        <option value="">Selecione sua cidade</option>
+        <option>São Paulo</option>
+        <option>Teresina</option>
+        <option>São Luís</option>
       </select>
     </div>
+
     <div class="form-group reveal">
       <label>Seu Pedido</label>
-      <textarea rows="4" placeholder="Descreva seus sabores e quantidade"></textarea>
+      <textarea name="order" rows="4" placeholder="Descreva seus sabores e quantidade" required></textarea>
     </div>
+
     <div class="form-group reveal">
       <label>Observações</label>
-      <textarea rows="2" placeholder="Restrições, ocasião especial, embalagem presente..."></textarea>
+      <textarea name="notes" rows="2" placeholder="Restrições, ocasião especial..."></textarea>
     </div>
+
     <div class="form-submit reveal">
-      <button class="btn-solid" onclick="handleOrder()">Enviar Pedido</button>
+      <button type="submit" class="btn-solid">Enviar Pedido</button>
     </div>
-  </div>
+
+  </form>
 </section>
+
+<input type="hidden" name="subject" value="Novo Pedido do Cajookie">
+<input type="hidden" name="from_name" value="Site Cajookie">
 
 <!-- FOOTER -->
 <footer>
