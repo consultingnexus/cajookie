@@ -384,58 +384,6 @@
       text-transform: uppercase
     }
 
-    /* FLAVOR MOBILE — show/hide */
-    @media (max-width: 600px) {
-      .flavor-card.mobile-hidden {
-        display: none
-      }
-
-      .flavors-expandable {
-        overflow: hidden;
-        transition: max-height 0.55s cubic-bezier(0.22, 1, 0.36, 1)
-      }
-
-      .show-more-wrap {
-        display: flex;
-        justify-content: center;
-        padding: 2rem 0 0
-      }
-    }
-
-    @media (min-width: 601px) {
-      .show-more-wrap { display: none }
-    }
-
-    .btn-show-more {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      border: 1px solid var(--gray3);
-      padding: 12px 28px;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gray5);
-      background: transparent;
-      font-family: var(--sans);
-      cursor: pointer;
-      transition: all 0.25s
-    }
-
-    .btn-show-more:hover {
-      border-color: var(--gray5);
-      color: var(--white)
-    }
-
-    .btn-show-more .arrow {
-      display: inline-block;
-      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)
-    }
-
-    .btn-show-more.expanded .arrow {
-      transform: rotate(180deg)
-    }
-
     /* STORY */
     #historia {
       background: var(--gray1);
@@ -710,7 +658,20 @@
   font-size: 14px
 }
 
+@media (max-width: 768px) {
+  .units-grid {
+    grid-template-columns: 1fr
+  }
 
+  .units-last-row {
+    flex-direction: column
+  }
+
+  .units-last-row .unit-card {
+    width: 100%;
+    max-width: 100%
+  }
+}
 
     /* REEL SECTION */
     #videos {
@@ -799,22 +760,7 @@
   align-items: center;
   gap: 1.5rem;
   padding: 3rem 2rem;
-  width: 100%;
-  overflow: hidden
-}
-
-@media (max-width: 600px) {
-  .carousel-wrapper {
-    gap: 0.75rem;
-    padding: 2rem 0.5rem
-  }
-
-  .carousel-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 14px;
-    flex-shrink: 0
-  }
+  width: 100%
 }
 
 .carousel-btn {
@@ -858,13 +804,6 @@
   pointer-events: none
 }
 
-@media (max-width: 600px) {
-  .cookie-carousel::before,
-  .cookie-carousel::after {
-    width: 24px
-  }
-}
-
 .cookie-carousel::before {
   left: 0;
   background: linear-gradient(to right, #0f0f0f 30%, transparent)
@@ -880,12 +819,6 @@
   gap: 2rem;
   width: max-content;
   will-change: transform
-}
-
-@media (max-width: 600px) {
-  .carousel-track {
-    gap: 20px
-  }
 }
 
 .carousel-slide {
@@ -905,21 +838,6 @@
   border: 1px solid var(--gray3);
   display: block;
   transition: transform 0.45s cubic-bezier(0.22,1,0.36,1), border-color 0.3s
-}
-
-@media (max-width: 600px) {
-  .carousel-slide img {
-    width: 120px;
-    height: 120px
-  }
-
-  .carousel-slide {
-    gap: 0.6rem
-  }
-
-  .carousel-slide-name {
-    font-size: 0.8rem
-  }
 }
 
 .carousel-slide:hover img {
@@ -1361,7 +1279,22 @@
   letter-spacing: 0.06em
 }
 
-
+@media (max-width: 900px) {
+  .pedido-split {
+    grid-template-columns: 1fr
+  }
+  .pedido-left {
+    min-height: 60vh
+  }
+  .pedido-right {
+    border-left: none;
+    border-top: 1px solid var(--gray2);
+    padding: 3rem 2rem
+  }
+  .form-row {
+    grid-template-columns: 1fr
+  }
+}
     /* ---- RESPONSIVE ---- */
     @media (max-width: 900px) {
       .pedido-split {
@@ -1495,401 +1428,33 @@
       transition-delay: 0.3s
     }
 
-    /* =============================================
-       RESPONSIVE — MOBILE FIRST
-       Covers 320px → 1920px
-       ============================================= */
-
-    /* ── NAV MOBILE ── */
-    @media (max-width: 768px) {
+    /* RESPONSIVE */
+    @media(max-width:768px) {
       nav {
-        padding: 0.9rem 1.25rem;
+        padding: 1rem 1.5rem
       }
 
       .nav-links {
         display: none
       }
 
-      .nav-hamburger {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        padding: 4px;
-        background: none;
-        border: none;
-        z-index: 101
-      }
-
-      .nav-hamburger span {
-        display: block;
-        width: 22px;
-        height: 1px;
-        background: var(--gray5);
-        transition: all 0.3s
-      }
-
-      .nav-drawer {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(8,8,8,0.98);
-        z-index: 200;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2.5rem;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s
-      }
-
-      .nav-drawer.open {
-        opacity: 1;
-        pointer-events: all
-      }
-
-      .nav-drawer a {
-        font-size: 1.8rem;
-        font-family: var(--serif);
-        font-weight: 300;
-        letter-spacing: 0.12em;
-        color: var(--gray6);
-        text-decoration: none;
-        transition: color 0.2s
-      }
-
-      .nav-drawer a:hover { color: var(--white) }
-
-      .nav-drawer-close {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        background: none;
-        border: none;
-        color: var(--gray5);
-        font-size: 1.8rem;
-        cursor: pointer;
-        line-height: 1
-      }
-    }
-
-    @media (min-width: 769px) {
-      .nav-hamburger { display: none }
-      .nav-drawer { display: none }
-    }
-
-    /* ── SECTION PADDING ── */
-    @media (max-width: 768px) {
       section {
-        padding: 4rem 1.25rem
+        padding: 5rem 1.5rem
       }
 
-      .section-title {
-        margin-bottom: 2.5rem
-      }
-    }
-
-    @media (max-width: 480px) {
-      section {
-        padding: 3.5rem 1rem
-      }
-    }
-
-    /* ── HERO ── */
-    @media (max-width: 768px) {
-      #hero {
-        padding: 0 1.25rem;
-        min-height: 100svh
-      }
-
-      .hero-eyebrow {
-        font-size: 9px;
-        letter-spacing: 0.2em;
-        margin-bottom: 1.25rem
-      }
-
-      .hero-subtitle {
-        font-size: 13px;
-        margin-bottom: 2rem
-      }
-
-      .hero-btns {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem
-      }
-
-      .btn-solid,
-      .btn-ghost {
-        width: 100%;
-        max-width: 280px;
-        text-align: center;
-        padding: 14px 20px
-      }
-    }
-
-    /* ── FLAVOR GRID ── */
-    @media (max-width: 600px) {
-      .flavor-card.mobile-hidden {
-        display: none
-      }
-
-      .flavors-expandable {
-        overflow: hidden;
-        transition: max-height 0.55s cubic-bezier(0.22, 1, 0.36, 1)
-      }
-
-      .show-more-wrap {
-        display: flex;
-        justify-content: center;
-        padding: 2rem 0 0
-      }
-    }
-
-    @media (min-width: 601px) {
-      .show-more-wrap { display: none }
-    }
-
-    /* ── STORY ── */
-    @media (max-width: 900px) {
       .story-grid {
         grid-template-columns: 1fr;
         gap: 3rem
       }
 
-      .story-visual {
-        order: -1
-      }
-
-      .story-stats {
-        max-width: 420px;
-        margin: 0 auto
-      }
-
-      .founder-card {
-        max-width: 420px;
-        margin: 0 auto
-      }
-    }
-
-    @media (max-width: 480px) {
-      .story-blocks {
-        gap: 2rem
-      }
-
-      .stat-num {
-        font-size: 2.2rem
-      }
-    }
-
-    /* ── UNIDADES ── */
-    @media (max-width: 900px) {
-      .units-grid {
-        grid-template-columns: repeat(2, 1fr)
-      }
-
-      .units-last-row {
-        justify-content: stretch
-      }
-
-      .units-last-row .unit-card {
-        width: 100%;
-        max-width: 100%
-      }
-    }
-
-    @media (max-width: 600px) {
-      .units-grid {
-        grid-template-columns: 1fr
-      }
-
-      .units-last-row {
-        flex-direction: column
-      }
-
-      .units-last-row .unit-card {
-        width: 100%;
-        max-width: 100%
-      }
-    }
-
-    /* ── REELS / VÍDEOS ── */
-    @media (max-width: 768px) {
       .reels-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 0.75rem
-      }
-    }
-
-    /* ── CARROSSEL ── */
-    @media (max-width: 600px) {
-      #caixa {
-        padding-left: 0;
-        padding-right: 0
-      }
-
-      .caixa-inner {
-        padding: 0 1.25rem
-      }
-
-      .caixa-subtitle {
-        padding: 0 1.25rem
-      }
-
-      .carousel-wrapper {
-        gap: 0.5rem;
-        padding: 2rem 0.75rem
-      }
-
-      .carousel-btn {
-        width: 34px;
-        height: 34px;
-        font-size: 13px;
-        flex-shrink: 0
-      }
-
-      .carousel-slide img {
-        width: 110px;
-        height: 110px
-      }
-
-      .carousel-slide {
-        gap: 0.5rem
-      }
-
-      .carousel-slide-name {
-        font-size: 0.75rem
-      }
-
-      .cookie-carousel::before,
-      .cookie-carousel::after {
-        width: 20px
-      }
-
-      .carousel-track {
-        gap: 16px
-      }
-
-      .caixa-cta {
-        padding: 0 1.25rem 3rem
-      }
-    }
-
-    /* ── PEDIDO ── */
-    @media (max-width: 900px) {
-      .pedido-split {
-        grid-template-columns: 1fr;
-        min-height: auto
-      }
-
-      .pedido-left {
-        min-height: 55vw
-      }
-
-      .pedido-left-content {
-        padding: 2.5rem 1.5rem 3rem
-      }
-
-      .pedido-right {
-        padding: 3.5rem 1.5rem;
-        border-left: none;
-        border-top: 1px solid var(--gray2)
       }
 
       .form-row {
         grid-template-columns: 1fr
       }
-    }
-
-    @media (max-width: 600px) {
-      .pedido-left {
-        min-height: 65vw
-      }
-
-      .pedido-left-content {
-        padding: 2rem 1.25rem 2.5rem
-      }
-
-      .pedido-left-title {
-        font-size: clamp(1.8rem, 7vw, 2.4rem)
-      }
-
-      .pedido-left-desc {
-        max-width: 100%;
-        font-size: 12px
-      }
-
-      .pedido-right {
-        padding: 3rem 1.25rem
-      }
-
-      .occasion-grid {
-        grid-template-columns: repeat(3, 1fr)
-      }
-
-      .occasion-name {
-        font-size: 0.62rem
-      }
-
-      .form-submit {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1rem
-      }
-
-      .form-submit .btn-solid {
-        width: 100%;
-        text-align: center
-      }
-
-      .form-submit-note {
-        text-align: center
-      }
-    }
-
-    /* ── FOOTER ── */
-    @media (max-width: 480px) {
-      footer {
-        padding: 2.5rem 1.25rem
-      }
-
-      .footer-social {
-        gap: 1.25rem;
-        flex-wrap: wrap;
-        justify-content: center
-      }
-    }
-
-    /* ── WHATSAPP FLOAT ── */
-    @media (max-width: 480px) {
-      .whatsapp-float {
-        bottom: 16px;
-        right: 16px
-      }
-    }
-
-    /* ── DEV CREDIT ── */
-    @media (max-width: 480px) {
-      .dev-credit {
-        padding: 0.75rem 1rem;
-        font-size: 9px;
-        flex-wrap: wrap;
-        text-align: center
-      }
-    }
-
-    /* ── GLOBAL OVERFLOW SAFETY ── */
-    img, video, svg {
-      max-width: 100%
-    }
-
-    @media (hover: none) {
-      .flavor-card:hover .flavor-img { transform: none }
-      .unit-card:hover .unit-img { transform: none }
     }
   </style>
 </head>
@@ -1907,21 +1472,7 @@
       <li><a href="#pedido">Pedido</a></li>
     </ul>
     <a href="#pedido" class="nav-cta">Fazer Pedido</a>
-    <!-- MOBILE HAMBURGER -->
-    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menu">
-      <span></span><span></span><span></span>
-    </button>
   </nav>
-
-  <!-- MOBILE DRAWER -->
-  <div class="nav-drawer" id="navDrawer">
-    <button class="nav-drawer-close" id="navDrawerClose" aria-label="Fechar menu">&#215;</button>
-    <a href="#sabores" class="nav-drawer-link">Sabores</a>
-    <a href="#historia" class="nav-drawer-link">História</a>
-    <a href="#unidades" class="nav-drawer-link">Unidades</a>
-    <a href="#pedido" class="nav-drawer-link">Pedido</a>
-    <a href="#pedido" class="btn-solid" style="margin-top:1rem;text-align:center">Fazer Pedido</a>
-  </div>
 
   <!-- HERO -->
   <section id="hero">
@@ -1959,12 +1510,7 @@
   <section id="sabores">
     <p class="section-eyebrow reveal">Cardápio</p>
     <h2 class="section-title reveal">Os Sabores</h2>
-    <div class="flavors-grid flavors-expandable" id="flavorsGrid"></div>
-    <div class="show-more-wrap">
-      <button class="btn-show-more" id="btnShowMore" aria-expanded="false">
-        Mostrar mais <span class="arrow">&#8964;</span>
-      </button>
-    </div>
+    <div class="flavors-grid" id="flavorsGrid"></div>
   </section>
 
   <!-- HISTORIA -->
@@ -2260,36 +1806,16 @@
     (function () {
       const track = document.getElementById('carouselTrack');
       const TOTAL = 22;
-
-      function getSlideMetrics() {
-        const w = window.innerWidth;
-        const IMG = w <= 400 ? 100 : w <= 600 ? 110 : 180;
-        const GAP = w <= 600 ? 16 : 32;
-        return { IMG, GAP, SLIDE_W: IMG + GAP };
-      }
-
-      let metrics = getSlideMetrics();
+      const GAP = 32;
+      const IMG = 180;
+      const SLIDE_W = IMG + GAP;
+      const MAX = TOTAL * SLIDE_W;
       let offset = 0;
       let paused = false;
 
-      function applyMetrics() {
-        metrics = getSlideMetrics();
-        track.querySelectorAll('.carousel-slide img').forEach(img => {
-          img.style.width = metrics.IMG + 'px';
-          img.style.height = metrics.IMG + 'px';
-        });
-        track.style.gap = metrics.GAP + 'px';
-        offset = 0;
-        track.style.transform = 'translateX(0)';
-      }
-
-      window.addEventListener('resize', applyMetrics);
-      applyMetrics();
-
       function tick() {
-        const MAX = TOTAL * metrics.SLIDE_W;
         if (!paused) {
-          offset += 0.5;
+          offset += 0.6;
           if (offset >= MAX) offset -= MAX;
           track.style.transform = 'translateX(-' + offset + 'px)';
         }
@@ -2299,37 +1825,17 @@
       requestAnimationFrame(tick);
 
       document.getElementById('carouselNext').addEventListener('click', () => {
-        const MAX = TOTAL * metrics.SLIDE_W;
-        offset = (offset + metrics.SLIDE_W) % MAX;
+        offset = (offset + SLIDE_W) % MAX;
         track.style.transform = 'translateX(-' + offset + 'px)';
       });
 
       document.getElementById('carouselPrev').addEventListener('click', () => {
-        const MAX = TOTAL * metrics.SLIDE_W;
-        offset = (offset - metrics.SLIDE_W + MAX) % MAX;
+        offset = (offset - SLIDE_W + MAX) % MAX;
         track.style.transform = 'translateX(-' + offset + 'px)';
       });
 
       track.addEventListener('mouseenter', () => paused = true);
       track.addEventListener('mouseleave', () => paused = false);
-
-      // Touch support
-      let touchStartX = 0;
-      track.addEventListener('touchstart', e => {
-        touchStartX = e.touches[0].clientX;
-        paused = true;
-      }, { passive: true });
-      track.addEventListener('touchend', e => {
-        const diff = touchStartX - e.changedTouches[0].clientX;
-        const MAX = TOTAL * metrics.SLIDE_W;
-        if (Math.abs(diff) > 30) {
-          offset = diff > 0
-            ? (offset + metrics.SLIDE_W) % MAX
-            : (offset - metrics.SLIDE_W + MAX) % MAX;
-          track.style.transform = 'translateX(-' + offset + 'px)';
-        }
-        paused = false;
-      }, { passive: true });
     })();
   </script>
 </section>
@@ -2701,9 +2207,6 @@
       if (i % 3 === 1) card.classList.add('reveal-delay-1');
       if (i % 3 === 2) card.classList.add('reveal-delay-2');
 
-      // Hide cards after first 3 on mobile
-      if (i >= 3) card.classList.add('mobile-hidden');
-
       const hasRealImg = !!f.image;
 
       card.innerHTML = `
@@ -2726,56 +2229,9 @@
       grid.appendChild(card);
     });
 
-    // Show More / Show Less button
-    const btnShowMore = document.getElementById('btnShowMore');
-    const hiddenCards = () => grid.querySelectorAll('.mobile-hidden');
-    let expanded = false;
-
-    btnShowMore.addEventListener('click', () => {
-      expanded = !expanded;
-      btnShowMore.setAttribute('aria-expanded', expanded);
-      btnShowMore.classList.toggle('expanded', expanded);
-      btnShowMore.innerHTML = expanded
-        ? 'Mostrar menos <span class="arrow">&#8964;</span>'
-        : 'Mostrar mais <span class="arrow">&#8964;</span>';
-
-      const cards = grid.querySelectorAll('.flavor-card');
-      cards.forEach((card, i) => {
-        if (i >= 3) {
-          if (expanded) {
-            card.classList.remove('mobile-hidden');
-            // trigger reveal for newly shown cards
-            setTimeout(() => io.observe(card), 10);
-          } else {
-            card.classList.add('mobile-hidden');
-          }
-        }
-      });
-    });
-
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // Mobile nav drawer
-    const hamburger = document.getElementById('navHamburger');
-    const drawer = document.getElementById('navDrawer');
-    const drawerClose = document.getElementById('navDrawerClose');
-
-    function openDrawer() {
-      drawer.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeDrawer() {
-      drawer.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    if (hamburger) hamburger.addEventListener('click', openDrawer);
-    if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
-    document.querySelectorAll('.nav-drawer-link, .nav-drawer .btn-solid').forEach(link => {
-      link.addEventListener('click', closeDrawer);
     });
 
     const io = new IntersectionObserver((entries) => {
