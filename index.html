@@ -744,7 +744,8 @@
     #videos {
       background: var(--gray1);
       border-top: 1px solid var(--gray2);
-      border-bottom: 1px solid var(--gray2)
+      border-bottom: 1px solid var(--gray2);
+      
     }
 
     .reels-grid {
@@ -771,7 +772,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 1rem
+      gap: 0rem;
+      margin-top: -30px;
     }
 
     .reel-icon {
@@ -2193,7 +2195,7 @@
       <div class="reel reveal">
         <div class="reel-inner">
           <div class="reel-num">01</div>
-          <video width="300" autoplay muted loop playsinline preload="metadata" style="pointer-events:none">
+          <video autoplay muted loop playsinline preload="metadata" style="pointer-events:none">
             <source src="./images/snapinsta.com.br-69ec2948ead59.mp4" type="video/mp4">
           </video>
 
@@ -2212,7 +2214,7 @@
         <div class="reel-inner">
           <div class="reel-num">02</div>
 
-          <video width="300" autoplay muted loop playsinline preload="metadata" style="pointer-events:none">
+          <video autoplay muted loop playsinline preload="metadata" style="pointer-events:none">
             <source src="./images/Video Project.mp4" type="video/mp4">
           </video>
 
@@ -2231,7 +2233,7 @@
         <div class="reel-inner">
           <div class="reel-num">03</div>
 
-          <video autoplay width="300" muted loop playsinline preload="metadata" style="pointer-events:none">
+          <video autoplay muted loop playsinline preload="metadata" style="pointer-events:none">
             <source src="./images/cajookie.mp4" type="video/mp4">
           </video>
 
@@ -2351,7 +2353,7 @@
       function tick() {
         const MAX = TOTAL * metrics.SLIDE_W;
         if (!paused) {
-          offset += 0.5;
+          offset += 1.1;
           if (offset >= MAX) offset -= MAX;
           track.style.transform = 'translateX(-' + offset + 'px)';
         }
