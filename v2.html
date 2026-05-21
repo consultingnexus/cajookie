@@ -674,7 +674,6 @@
   margin-top: 1px
 }
 
-
 .unit-actions {
   display: flex;
   gap: .6rem;
@@ -711,34 +710,7 @@
   font-size: 14px
 }
 
-.unit-hours {
-  display: flex;
-  align-items: center;
-  gap: .45rem;
-  font-size: 12px;
-  color: var(--gray5);
-  padding: .5rem 1.5rem .75rem;
-  border-top: 1px solid var(--gray2)
-}
 
-.unit-hours i {
-  font-size: 13px;
-  color: var(--gray4);
-  flex-shrink: 0
-}
-
-.unit-hours-text {
-  line-height: 1.5
-}
-
-.unit-hours-text strong {
-  color: var(--gray6);
-  font-weight: 500;
-  display: block;
-  font-size: 11px;
-  letter-spacing: .05em;
-  text-transform: uppercase
-}
 
     /* REEL SECTION */
     #videos {
@@ -2055,13 +2027,6 @@
         <div class="unit-neighborhood">Jardim Paulista</div>
         <div class="unit-address"><i class="ti ti-map-pin"></i> Alameda Santos, 2214</div>
       </div>
-      <div class="unit-hours">
-        <i class="ti ti-clock"></i>
-        <div class="unit-hours-text">
-          <strong>Horário</strong>
-          Seg–Sex: 12h–22h · Sáb–Dom: 12h–23h
-        </div>
-      </div>
       <div class="unit-actions">
         <a class="unit-btn" href="https://maps.app.goo.gl/euG1LWdRrjVSLgmZ8" target="_blank" rel="noopener">
           <i class="ti ti-map-pin"></i> Localização
@@ -2081,13 +2046,6 @@
         <div class="unit-neighborhood">Pinheiros</div>
         <div class="unit-address"><i class="ti ti-map-pin"></i> Rua dos Pinheiros, 531-B</div>
       </div>
-      <div class="unit-hours">
-        <i class="ti ti-clock"></i>
-        <div class="unit-hours-text">
-          <strong>Horário</strong>
-          Seg–Sex: 12h–22h · Sáb–Dom: 12h–23h
-        </div>
-      </div>
       <div class="unit-actions">
         <a class="unit-btn" href="https://maps.app.goo.gl/dWuthkxKHQgppgoC8" target="_blank" rel="noopener">
           <i class="ti ti-map-pin"></i> Localização
@@ -2106,13 +2064,6 @@
         <div class="unit-city">Teresina</div>
         <div class="unit-neighborhood">Shopping Rio Poty</div>
         <div class="unit-address"><i class="ti ti-map-pin"></i> Shopping Rio Poty</div>
-      </div>
-      <div class="unit-hours">
-        <i class="ti ti-clock"></i>
-        <div class="unit-hours-text">
-          <strong>Horário</strong>
-          Seg–Sáb: 10h–22h · Dom: 12h–21h
-        </div>
       </div>
       <div class="unit-actions">
         <a class="unit-btn" href="https://maps.app.goo.gl/UbZgitx5qb6nDY349" target="_blank" rel="noopener">
@@ -2136,13 +2087,6 @@
           <div class="unit-neighborhood">Casa Cajookie</div>
           <div class="unit-address"><i class="ti ti-map-pin"></i> Casa Cajookie — Jóquei</div>
         </div>
-        <div class="unit-hours">
-          <i class="ti ti-clock"></i>
-          <div class="unit-hours-text">
-            <strong>Horário</strong>
-            Ter–Dom: 14h–22h · Seg: Fechado
-          </div>
-        </div>
         <div class="unit-actions">
           <a class="unit-btn" href="https://maps.app.goo.gl/5Vc5d9GHJDiN2mjn8" target="_blank" rel="noopener">
             <i class="ti ti-map-pin"></i> Localização
@@ -2161,13 +2105,6 @@
           <div class="unit-city">São Luís</div>
           <div class="unit-neighborhood">Shopping da Ilha</div>
           <div class="unit-address"><i class="ti ti-map-pin"></i> Shopping da Ilha — Piso L3</div>
-        </div>
-        <div class="unit-hours">
-          <i class="ti ti-clock"></i>
-          <div class="unit-hours-text">
-            <strong>Horário</strong>
-            Seg–Sáb: 10h–22h · Dom: 12h–21h
-          </div>
         </div>
         <div class="unit-actions">
           <a class="unit-btn" href="https://maps.app.goo.gl/7WY9AXij6yDuwmkN7" target="_blank" rel="noopener">
@@ -2193,7 +2130,7 @@
       <div class="reel reveal">
         <div class="reel-inner">
           <div class="reel-num">01</div>
-          <video width="300" autoplay muted loop playsinline preload="metadata" style="pointer-events:none">
+          <video controls width="300" autoplay muted loop playsinline>
             <source src="./images/snapinsta.com.br-69ec2948ead59.mp4" type="video/mp4">
           </video>
 
@@ -2212,7 +2149,7 @@
         <div class="reel-inner">
           <div class="reel-num">02</div>
 
-          <video width="300" autoplay muted loop playsinline preload="metadata" style="pointer-events:none">
+          <video controls width="300" autoplay muted loop playsinline>
             <source src="./images/Video Project.mp4" type="video/mp4">
           </video>
 
@@ -2231,8 +2168,9 @@
         <div class="reel-inner">
           <div class="reel-num">03</div>
 
-          <video autoplay width="300" muted loop playsinline preload="metadata" style="pointer-events:none">
+          <video autoplay width="300" muted loop playsinline>
             <source src="./images/cajookie.mp4" type="video/mp4">
+
           </video>
 
           <div class="reel-icon">
